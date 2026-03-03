@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0005389204, g: 0.002853856, b: 0.013835273, a: 1}
+  m_IndirectSpecularColor: {r: 0.0005388935, g: 0.002853642, b: 0.013834078, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1473,7 +1473,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816585277}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 8799f74022a5b7344be3f0aed27620d4, type: 2}
   m_CullingMode: 0
@@ -1501,7 +1501,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2203,6 +2203,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 27d2f3aee7308ff4f88cd82c77281fca, type: 2}
+    - target: {fileID: 3433992052308909741, guid: 4892cd2764b886a4a8f6618941739e45,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3433992052308909741, guid: 4892cd2764b886a4a8f6618941739e45,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 8017815783547229453, guid: 4892cd2764b886a4a8f6618941739e45,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3700,8 +3710,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.10902666, y: 0.019999998, z: 0.019999955}
-  m_Center: {x: 0.044513803, y: 8.940656e-11, z: -0.0000000019147859}
+  m_Size: {x: 0.17782211, y: 0.019999998, z: 0.019999955}
+  m_Center: {x: 0.078911506, y: 1.5849459e-10, z: -0.0000000019314692}
 --- !u!114 &1375737373
 MonoBehaviour:
   m_ObjectHideFlags: 0

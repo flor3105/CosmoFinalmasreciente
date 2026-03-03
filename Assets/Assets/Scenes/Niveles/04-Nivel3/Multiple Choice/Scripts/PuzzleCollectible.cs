@@ -9,6 +9,7 @@ public class PuzzleCollectible : MonoBehaviour
     public float rotateSpeed = 200f;
 
     bool isMoving = false;
+    bool counted = false; // ← evita contar varias veces
 
     void Update()
     {
@@ -25,10 +26,11 @@ public class PuzzleCollectible : MonoBehaviour
             transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime);
 
             // Cuando llega
-            if (Vector3.Distance(transform.position, doorTarget.position) < 0.1f)
+            if (!counted && Vector3.Distance(transform.position, doorTarget.position) < 0.1f)
             {
+                counted = true;
+
                 FindObjectOfType<DoorController>().AddObject();
-                
             }
         }
     }

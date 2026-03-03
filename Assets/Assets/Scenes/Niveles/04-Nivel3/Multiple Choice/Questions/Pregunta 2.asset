@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a4993259b66cfd479ce33028ddfd31e, type: 3}
-  m_Name: Test Question A
+  m_Name: Pregunta 2
   m_EditorClassIdentifier: 
-  question: "\xBFCu\xE1l es la respuesta correcta?"
+  question: "\xBFDe que color es el sol?"
   possibleAnswers:
-  - "La 1 (\xEDndice 0)"
-  - "La 2 (\xEDndice 1)"
-  - "La 3 (\xEDndice 2)"
-  - "La 4 (\xEDndice 3)"
-  correctAnswer: 2
+  - Amarillo
+  - Blanco
+  - Naranja
+  - Rojo
+  correctAnswer: 1
