@@ -12,6 +12,7 @@ public class CustomTPController : MonoBehaviour
     public List<GameObject> carriedStars = new List<GameObject>();
     public static CustomTPController Instance;
     public Transform cam;
+    public bool canMove = true;
    
     private void Awake()
     {
@@ -56,6 +57,11 @@ public class CustomTPController : MonoBehaviour
 
     void Update( )
     { 
+         if(!canMove) return; // si canMove es false, no se procesa nada
+
+    AxisMovement();
+    AnimationControls();
+    
     if(Input.GetKey(KeyCode.Space)) 
     { Debug.Log("Estoy apretando la barra espaciadora");
 
