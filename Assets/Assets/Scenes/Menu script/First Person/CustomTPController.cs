@@ -61,35 +61,8 @@ public class CustomTPController : MonoBehaviour
 
     AxisMovement();
     AnimationControls();
-    
-    if(Input.GetKey(KeyCode.Space)) 
-    { Debug.Log("Estoy apretando la barra espaciadora");
-
-     } 
-
-     else 
-
-     { Debug.Log("No estoy apretando la barra espaciadora");
-
-      } 
-
-      if(Input.GetKeyDown(KeyCode.Space))
-       { Debug.Log("Aprete la barra espaciadora");
-
-        } 
-
-        if(Input.GetKeyUp(KeyCode.Space)) 
-
-        { Debug.Log("Solte la barra espaciadora");
-
-         } Debug.Log(Input.GetAxis("Vertical"));
-
-          Debug.Log(Input.GetAxisRaw("Vertical"));
-
-           AxisMovement(); AnimationControls();
 
     }
-
     
     void AxisMovement()
 {
