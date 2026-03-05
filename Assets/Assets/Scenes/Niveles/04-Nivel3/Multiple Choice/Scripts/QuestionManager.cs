@@ -76,7 +76,7 @@ public class QuestionManager : MonoBehaviour
         if (currentCorrectAnswer == answerIndex)
         {
             feedbackAnim.Play("Correct Answer");
-            feedbackText.text = "Correcto!";
+            feedbackText.text = "¡Correcto!";
 
             currentTrigger.solved = true;
 
@@ -88,7 +88,7 @@ public class QuestionManager : MonoBehaviour
         else
         {
             feedbackAnim.Play("Incorrect Answer");
-            feedbackText.text = "Incorrecto!";
+            feedbackText.text = "¡Incorrecto!";
         }
 
         StartCoroutine(HideFeedback());
