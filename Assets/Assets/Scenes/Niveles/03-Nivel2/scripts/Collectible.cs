@@ -12,12 +12,12 @@ public class Collectible : MonoBehaviour
 
             if (player != null)
             {
-                // Añade este objeto a la lista del jugador
+                
                 player.AddStar(gameObject);
 
                 Debug.Log("Objeto recolectado!");
 
-                // Destruye el objeto de la escena
+                
                 Destroy(gameObject);
             }
         }
