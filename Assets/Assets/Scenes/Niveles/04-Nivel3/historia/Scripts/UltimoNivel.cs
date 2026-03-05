@@ -3,13 +3,13 @@ using UnityEngine.UI;
 
 public class HistoriaUltimoNivel : MonoBehaviour
 {
-    public GameObject comicCanvas;   // Canvas del último nivel
-    public Image comicImage;         // Imagen grande
-    public Sprite historiaSprite;    // Sprite de la historia del nivel
+    public GameObject comicCanvas;  
+    public Image comicImage;        
+    public Sprite historiaSprite;  
 
     void Start()
     {
-        comicCanvas.SetActive(false); // Ocultar al inicio
+        comicCanvas.SetActive(false); 
     }
 
     public void TriggerLevelEnd()

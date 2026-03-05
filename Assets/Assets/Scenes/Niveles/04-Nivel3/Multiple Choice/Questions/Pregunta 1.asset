@@ -15,7 +15,7 @@ MonoBehaviour:
   question: "\xBFC\xF3mo se llama el sat\xE9lite natural de la Tierra?"
   possibleAnswers:
   - Ceres
-  - Titan
+  - "Tit\xE1n"
   - Luna
   - Fibos
   correctAnswer: 2

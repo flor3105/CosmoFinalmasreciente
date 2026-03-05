@@ -2481,8 +2481,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 6.9401116, y: 8.255026, z: 15.958383}
-  m_Center: {x: 4.4838676, y: 3.6275134, z: 1.0212097}
+  m_Size: {x: 4.271249, y: 8.255026, z: 15.958383}
+  m_Center: {x: 3.149441, y: 3.6275134, z: 1.0212097}
 --- !u!114 &353428998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9772,7 +9772,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1680573308}
   - component: {fileID: 1680573310}
-  - component: {fileID: 1680573311}
   m_Layer: 0
   m_Name: Trigger
   m_TagString: Untagged
@@ -9816,19 +9815,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.171671, y: 8.255026, z: 9.781413}
   m_Center: {x: 0.53700495, y: 3.627513, z: 0.15330172}
---- !u!114 &1680573311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680573307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7300cd70a874aa24989ab923d9b7e837, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PuertaAnim: {fileID: 816585278}
 --- !u!1001 &1703602267
 PrefabInstance:
   m_ObjectHideFlags: 0

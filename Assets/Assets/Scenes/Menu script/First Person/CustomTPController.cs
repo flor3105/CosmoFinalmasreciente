@@ -28,7 +28,6 @@ public class CustomTPController : MonoBehaviour
         headPosition
     );
 
-    // Opcional: offset para que no se superpongan
     nuevaEstrella.transform.localPosition = Vector3.up * carriedStars.Count * 0.5f;
 
     carriedStars.Add(nuevaEstrella);
@@ -57,7 +56,7 @@ public class CustomTPController : MonoBehaviour
 
     void Update( )
     { 
-         if(!canMove) return; // si canMove es false, no se procesa nada
+         if(!canMove) return;
 
     AxisMovement();
     AnimationControls();
@@ -73,14 +72,11 @@ public class CustomTPController : MonoBehaviour
 
     if(input.magnitude >= 0.1f)
     {
-        // Girar el input según la cámara
         float camYaw = cam.eulerAngles.y;
         Vector3 moveDir = Quaternion.Euler(0f, camYaw, 0f) * input;
 
-        // Mover el personaje
         transform.position += moveDir * speed * Time.deltaTime;
 
-        // Rotar el personaje hacia donde se mueve
         transform.rotation = Quaternion.Slerp(transform.rotation,
                                               Quaternion.LookRotation(moveDir),
                                               rotSpeed * Time.deltaTime);

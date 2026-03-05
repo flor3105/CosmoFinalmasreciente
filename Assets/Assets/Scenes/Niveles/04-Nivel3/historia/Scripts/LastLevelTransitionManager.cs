@@ -6,15 +6,15 @@ using System.Collections;
 public class LastLevelTransitionManager : MonoBehaviour
 {
     [Header("Canvas y Panel")]
-    public GameObject comicCanvas;   // Canvas que contiene la imagen
-    public Image comicPanel;         // Imagen única del comic
+    public GameObject comicCanvas;  
+    public Image comicPanel;        
     public bool IsPlaying { get; private set; } = false;
 
     [Header("Escena")]
     public string menuSceneName;
 
     [Header("Aparición automática")]
-    public float fadeDuration = 1f;  // duración del fade
+    public float fadeDuration = 1f; 
 
     private void Start()
     {
@@ -25,12 +25,10 @@ public class LastLevelTransitionManager : MonoBehaviour
 
     public void TriggerLevelEnd(Sprite storySprite)
 {
-    // Activar el Canvas y la imagen del cómic
     comicCanvas.SetActive(true);
     comicPanel.sprite = storySprite;
     comicPanel.gameObject.SetActive(true);
 
-    // 🔹 Activar el cursor para poder hacer click en la X
     Cursor.visible = true;
     Cursor.lockState = CursorLockMode.None;
 

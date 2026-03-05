@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class PuertaFinal : MonoBehaviour
 {
-    public Sprite[] storySprites; // Para niveles normales
-    public Sprite storySprite;    // Para último nivel
+    public Sprite[] storySprites; 
+    public Sprite storySprite;    
 
-    // Indica si es el último nivel
     public bool isLastLevel = false;
 
     private void OnTriggerEnter(Collider other)
@@ -15,7 +14,6 @@ public class PuertaFinal : MonoBehaviour
 
         if (isLastLevel)
         {
-            // Llama al LastLevelTransitionManager
             LastLevelTransitionManager lastManager = FindObjectOfType<LastLevelTransitionManager>();
             if (lastManager != null && storySprite != null)
             {
@@ -28,7 +26,6 @@ public class PuertaFinal : MonoBehaviour
         }
         else
         {
-            // Llama al LevelTransitionManager normal
             LevelTransitionManager manager = FindObjectOfType<LevelTransitionManager>();
             if (manager != null && storySprites != null && storySprites.Length > 0)
             {

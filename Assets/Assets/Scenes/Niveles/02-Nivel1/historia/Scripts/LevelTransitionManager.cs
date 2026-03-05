@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class LevelTransitionManager : MonoBehaviour
 {
     [Header("Canvas y Paneles")]
-    public GameObject comicCanvas;      // Canvas que contiene la historia
-    public Image[] comicPanels;         // Las 4 viñetas (UL, UR, LL, LR)
+    public GameObject comicCanvas; 
+    public Image[] comicPanels;  
     public Image separators;
     public bool IsPlaying { get; private set; } = false;
 
@@ -15,7 +15,7 @@ public class LevelTransitionManager : MonoBehaviour
     public string lobbySceneName = "Inicio Puertas";
 
     [Header("Aparición automática")]
-    public float delayBetweenPanels = 1f; // Tiempo en segundos entre cada viñeta
+    public float delayBetweenPanels = 1f; 
 
 private void Start()
 {
@@ -31,30 +31,23 @@ private void Start()
         }
     }
 
-    // Asegurarse que no se reproduce automáticamente
     IsPlaying = false;
 }
 
-    /// <summary>
-    /// Inicia el cómic con un array de 4 sprites y los muestra de a uno automáticamente
-    /// </summary>
     public void TriggerLevelEnd(Sprite[] storySprites)
     {
-        IsPlaying = true; // marcar que el comic está en reproducción
+        IsPlaying = true;
 
     comicCanvas.SetActive(true);
 
-        // Activar Canvas
         comicCanvas.SetActive(true);
 
-        // Asignar sprites y ocultar viñetas
         for (int i = 0; i < comicPanels.Length; i++)
         {
             comicPanels[i].sprite = storySprites[i];
-            comicPanels[i].gameObject.SetActive(false); // empiezan ocultas
+            comicPanels[i].gameObject.SetActive(false);
         }
 
-        // Iniciar la secuencia automática
         StartCoroutine(ShowPanelsOneByOne());
     }
 
@@ -64,12 +57,9 @@ public void HideComic()
         comicCanvas.SetActive(false);
 }
 
-    /// <summary>
-    /// Muestra las viñetas de a una automáticamente
-    /// </summary>
     private IEnumerator ShowPanelsOneByOne()
 {
-    IsPlaying = true; // Se empieza a reproducir
+    IsPlaying = true; 
 
     foreach (Image panel in comicPanels)
     {
@@ -91,15 +81,11 @@ public void HideComic()
     if (separators != null)
         separators.gameObject.SetActive(true);
 
-    IsPlaying = false; // Termina de reproducirse
+    IsPlaying = false; 
 }
 
-    /// <summary>
-    /// Llamar desde botón de cerrar cómic
-    /// </summary>
     public void EndComicAndGoToLobby()
     {
-        // Simplemente cargar el lobby sin pantalla de carga
         SceneManager.LoadScene(lobbySceneName);
     }
 }
