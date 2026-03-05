@@ -12,6 +12,7 @@ public class CustomTPController : MonoBehaviour
     public List<GameObject> carriedStars = new List<GameObject>();
     public static CustomTPController Instance;
     public Transform cam;
+    public bool canMove = true;
    
     private void Awake()
     {
@@ -27,7 +28,6 @@ public class CustomTPController : MonoBehaviour
         headPosition
     );
 
-    // Opcional: offset para que no se superpongan
     nuevaEstrella.transform.localPosition = Vector3.up * carriedStars.Count * 0.5f;
 
     carriedStars.Add(nuevaEstrella);
@@ -54,35 +54,14 @@ public class CustomTPController : MonoBehaviour
         
     }
 
-    void Update()
-    {
-       
-       if(Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Estoy apretando la barra espaciadora");
-        }
-        else
-        {
-            Debug.Log("No estoy apretando la barra espaciadora");
-        }
+    void Update( )
+    { 
+         if(!canMove) return;
 
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Aprete la barra espaciadora");
-        }
+    AxisMovement();
+    AnimationControls();
 
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            Debug.Log("Solte la barra espaciadora");
-        }
-
-        Debug.Log(Input.GetAxis("Vertical"));
-        Debug.Log(Input.GetAxisRaw("Vertical"));
-
-        AxisMovement();
-        AnimationControls();
     }
-
     
     void AxisMovement()
 {
@@ -93,40 +72,33 @@ public class CustomTPController : MonoBehaviour
 
     if(input.magnitude >= 0.1f)
     {
-        // Girar el input según la cámara
         float camYaw = cam.eulerAngles.y;
         Vector3 moveDir = Quaternion.Euler(0f, camYaw, 0f) * input;
 
-        // Mover el personaje
         transform.position += moveDir * speed * Time.deltaTime;
 
-        // Rotar el personaje hacia donde se mueve
         transform.rotation = Quaternion.Slerp(transform.rotation,
                                               Quaternion.LookRotation(moveDir),
                                               rotSpeed * Time.deltaTime);
     }
 }
 
-    void AnimationControls()
+void AnimationControls()
 {
-    
-    if (Input.GetAxisRaw("Vertical") != 0)
-    {
-        anim.SetBool("Walking", true);
-    }
-    else
-    {
-        anim.SetBool("Walking", false);
-    }
+    float horizontal = Input.GetAxisRaw("Horizontal");
+    float vertical = Input.GetAxisRaw("Vertical");
 
-    
-    anim.SetFloat("Direction", Input.GetAxis("Vertical"));
+    bool isMoving = horizontal != 0 || vertical != 0;
 
-    
+    anim.SetBool("Walking", isMoving);
+
+    anim.SetFloat("Direction", vertical);
+
     if (Input.GetKeyDown(KeyCode.Space))
     {
         fidgetting = !fidgetting;
     }
+
     anim.SetBool("Fidgetting", fidgetting);
 }
     

@@ -26,10 +26,8 @@ public class DepositZone : MonoBehaviour
         if (!player.HasStars()) return;
         if (depositedStars >= requiredStars) return;
 
-        // Quitar UNA estrella del jugador (visual correcta)
         player.RemoveStar();
 
-        // Mostrar estrella en la base
         if (depositedStars < objectsToShow.Length)
         {
             objectsToShow[depositedStars].SetActive(true);

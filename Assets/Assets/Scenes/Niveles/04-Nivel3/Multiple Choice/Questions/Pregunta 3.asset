@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4993259b66cfd479ce33028ddfd31e, type: 3}
   m_Name: Pregunta 3
   m_EditorClassIdentifier: 
-  question: "\xBFCu\xE1l es el planeta m\xE1s cercano al sol?"
+  question: "\xBFCu\xE1l es el planeta m\xE1s cercano al Sol?"
   possibleAnswers:
   - Mercurio
   - Venus

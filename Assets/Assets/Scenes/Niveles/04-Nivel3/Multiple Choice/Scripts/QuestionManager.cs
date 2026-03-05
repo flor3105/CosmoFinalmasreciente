@@ -25,34 +25,39 @@ public class QuestionManager : MonoBehaviour
         cameraController = FindObjectOfType<TPCameraController>();
 
         player = FindObjectOfType<MC_Player>();
-        playerAnimator = FindObjectOfType<Animator>();
+        playerAnimator = playerController.anim;
 
         questionCanvas.SetActive(false);
         feedbackText.gameObject.SetActive(false);
     }
 
     public void LoadQuestion(Question q, QuestionTrigger t)
+{
+    questionCanvas.SetActive(true);
+
+    playerController.anim.SetBool("Walking", false);
+    playerController.anim.SetFloat("Speed", 0);
+
+    player.enabled = false;
+    playerController.enabled = false;
+    cameraController.enabled = false;
+
+    playerAnimator = playerController.anim;
+    playerAnimator.speed = 0;
+
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+
+    questionText.text = q.question;
+
+    for (int i = 0; i < answersTexts.Length; i++)
     {
-        questionCanvas.SetActive(true);
-        player.enabled = false;
-
-        playerController.enabled = false;
-        cameraController.enabled = false;
-        playerAnimator.speed = 0;
-
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        questionText.text = q.question;
-
-        for (int i = 0; i < answersTexts.Length; i++)
-        {
-            answersTexts[i].text = q.possibleAnswers[i];
-        }
-
-        currentCorrectAnswer = q.correctAnswer;
-        currentTrigger = t;
+        answersTexts[i].text = q.possibleAnswers[i];
     }
+
+    currentCorrectAnswer = q.correctAnswer;
+    currentTrigger = t;
+}
 
     public void AnswerQuestion(int answerIndex)
     {
